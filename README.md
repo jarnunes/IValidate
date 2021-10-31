@@ -14,6 +14,7 @@
 * [Tecnologias](#-tecnologias)
 <!--te-->
 
+--------------------------------------------------------------------------------
 ### 💡 Features
 - [ ] Validar CPF
 - [ ] Gerar CPF
@@ -28,7 +29,7 @@
 4. Clonar o projeto em repositório local e importar para a IDE escolhida
 
 --------------------------------------------------------------------------------
-### 💻 ️Instalação
+### 💻 ️Instalacao
 
 1. [Necessário Java 8 +](https://www.oracle.com/br/java/technologies/javase/javase8-archive-downloads.html)
    1. Para checar se o java já se encontra instalado, execute na linha de comando: ``java -version``
@@ -37,8 +38,12 @@
 3. Na linha de comando, acessar o diretório de download/instalação do jar e executar o comando:
 ``` java -jar ivalidate.jar ```
 4. Acessar o endereço [http://localhost:8080](http://localhost:8080) em seu web browser
+--------------------------------------------------------------------------------
+
 ### 🧪 Testes
 Descrição dos testes 
+
+--------------------------------------------------------------------------------
 
 ### 🛠 Tecnologias
 
