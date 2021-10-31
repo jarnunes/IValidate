@@ -38,6 +38,9 @@
 3. Na linha de comando, acessar o diretório de download/instalação do jar e executar o comando:
 ``` java -jar ivalidate.jar ```
 4. Acessar o endereço [http://localhost:8080](http://localhost:8080) em seu web browser
+<h1 align="center">
+  <img alt="Ivalidate" title="#Ivalidate" src="./assets/cpf.png" />
+</h1>
 --------------------------------------------------------------------------------
 
 ### 🧪 Testes

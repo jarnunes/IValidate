@@ -14,35 +14,78 @@
 <h:body>
     <div class="container">
         <div class="p-d-flex p-flex-column elements-card">
+            <div>
+                <h:form id="form">
+                    <p:growl id="msgs" showDetail="true" skipDetailIfEqualsSummary="true"/>
+                    <div class="card">
+                        <p:tabView>
+                            <p:tab title="CPF">
+                                <div>
+                                    <h2>Validar CPF</h2>
+                                    <div class="p-col-12 p-md-4">
+                                        <div class="ui-inputgroup">
+                                            <p:inputText value="#{generateCPF.cpf}" id="cpf"/>
+                                            <p:commandButton value="Validar" update="@form"
+                                                             action="#{generateCPF.validate}"
+                                                             icon="#{generateCPF.getIcon()}"
+                                                             styleClass="#{generateCPF.getStyle()}"
+                                            />
+                                        </div>
+                                    </div>
 
-            <div>
-                <h2>Gerar CPF</h2>
-                <h:form>
-                    <div class="p-col-12 p-md-4">
-                        <div class="ui-inputgroup">
-                            <p:commandButton value="Gerar CPF" update="@form" action="#{generateCPF.generate}"/>
-                            <h:panelGroup rendered="#{generateCPF.start !=false}">
-                                <p:inputText value="#{generateCPF.cpf}" id="cpf"/>
-                                <p:commandButton icon="pi pi-copy" styleClass="ui-button-secondary"/>
-                            </h:panelGroup>
-                        </div>
+                                </div>
+                                <div>
+                                    <h2>Gerar CPF</h2>
+                                    <div class="p-col-12 p-md-4">
+                                        <div class="ui-inputgroup">
+                                            <p:commandButton value="Gerar" update="@form"
+                                                             action="#{generateCPF.generate}"/>
+                                            <h:panelGroup rendered="#{generateCPF.start !=false}">
+                                                <p:inputText value="#{generateCPF.cpf}" id="cp"/>
+                                                <p:commandButton icon="pi pi-copy"
+                                                                 styleClass="ui-button-secondary"/>
+                                            </h:panelGroup>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </p:tab>
+                            <p:tab title="CNPJ">
+                                <div>
+                                    <h2>Validar CNPJ</h2>
+                                    <div class="p-col-12 p-md-4">
+                                        <div class="ui-inputgroup">
+                                            <p:inputText placeholder="00.000.000/0001-00" value="" id="cnp"/>
+                                            <p:commandButton value="Validar" update="@form"
+                                                             action="#{generateCPF.validate}"
+                                                             icon="#{generateCPF.getIcon()}"
+                                                             styleClass="#{generateCPF.getStyle()}"
+                                            />
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div>
+                                    <h2>Gerar CNPJ</h2>
+                                    <div class="p-col-12 p-md-4">
+                                        <div class="ui-inputgroup">
+                                            <p:commandButton value="Gerar" update="@form"
+                                                             action="#{generateCPF.generate}"/>
+                                            <h:panelGroup rendered="#{generateCPF.start !=false}">
+                                                <p:inputText value="#{generateCPF.cpf}" id="cnpj"/>
+                                                <p:commandButton icon="pi pi-copy"
+                                                                 styleClass="ui-button-secondary"/>
+                                            </h:panelGroup>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </p:tab>
+                        </p:tabView>
                     </div>
                 </h:form>
             </div>
-            <div>
-                <h2>Gerar CNPJ</h2>
-                <h:form>
-                    <div class="p-col-12 p-md-4">
-                        <div class="ui-inputgroup">
-                            <p:commandButton value="Gerar CNPJ" update="@form" action="#{generateCPF.generate}"/>
-                            <h:panelGroup rendered="#{generateCPF.start !=false}">
-                                <p:inputText value="#{generateCPF.cpf}"/>
-                                <p:commandButton icon="pi pi-copy" styleClass="ui-button-secondary"/>
-                            </h:panelGroup>
-                        </div>
-                    </div>
-                </h:form>
-            </div>
+
 
         </div>
     </div>
