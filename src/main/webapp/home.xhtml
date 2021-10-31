@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <title>IValidate</title>
+    <link rel="stylesheet" href="resources/css/style.css"/>
+    <script type="text/javascript" src="resources/js/func.js"></script>
+</h:head>
+
+<h:body>
+    <div class="container">
+        <div class="p-d-flex p-flex-column elements-card">
+
+            <div>
+                <h2>Gerar CPF</h2>
+                <h:form>
+                    <div class="p-col-12 p-md-4">
+                        <div class="ui-inputgroup">
+                            <p:commandButton value="Gerar CPF" update="@form" action="#{generateCPF.generate}"/>
+                            <h:panelGroup rendered="#{generateCPF.start !=false}">
+                                <p:inputText value="#{generateCPF.cpf}" id="cpf"/>
+                                <p:commandButton icon="pi pi-copy" styleClass="ui-button-secondary"/>
+                            </h:panelGroup>
+                        </div>
+                    </div>
+                </h:form>
+            </div>
+            <div>
+                <h2>Gerar CNPJ</h2>
+                <h:form>
+                    <div class="p-col-12 p-md-4">
+                        <div class="ui-inputgroup">
+                            <p:commandButton value="Gerar CNPJ" update="@form" action="#{generateCPF.generate}"/>
+                            <h:panelGroup rendered="#{generateCPF.start !=false}">
+                                <p:inputText value="#{generateCPF.cpf}"/>
+                                <p:commandButton icon="pi pi-copy" styleClass="ui-button-secondary"/>
+                            </h:panelGroup>
+                        </div>
+                    </div>
+                </h:form>
+            </div>
+
+        </div>
+    </div>
+</h:body>
+</html>

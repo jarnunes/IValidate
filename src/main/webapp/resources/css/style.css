@@ -1,0 +1,42 @@
+/*!
+ * Bootstrap v3.3.4 (http://getbootstrap.com)
+ * Copyright 2011-2015 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ *//*! normalize.css v3.0.2 | MIT License | git.io/normalize */
+html {
+    font-family: sans-serif;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%
+}
+
+body {
+    margin: 0
+}
+
+div.card {
+    margin: 0 auto;
+}
+
+.ui-panelgrid {
+    margin: 0 auto;
+}
+
+div.container {
+    width: 600px;
+    margin: 0 auto;
+    margin-top: 120px;
+    display: flex;
+    position: relative;
+    background-color: #f9f9f9;
+    border-radius: 3px;
+    padding: 20px;
+}
+
+
+.p-mb-2 {
+    margin: 5px !important;
+}
+
+.elements-card{
+    width: 100% !important;
+}

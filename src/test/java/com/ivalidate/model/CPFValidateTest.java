@@ -1,8 +1,8 @@
-package test.java.com.ivalidate.model;
+package com.ivalidate.model;
 
 import org.junit.Test;
 import org.junit.Assert;
-import com.ivalidate.model.CPFValidate;
+import com.ivalidate.model.cpf.CPFValidate;
 
 public class CPFValidateTest {
     private final String SEQUENCE_CPF = "111.111.111-11";
