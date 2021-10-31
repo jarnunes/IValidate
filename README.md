@@ -6,10 +6,10 @@
 
 <!--ts-->
 ### 📖 Conteúdo
-* [Sobre](#sobre)
-* [Features](#features)
-* [Ambiente de Desenvolvimento](#ambiente-de-desenvolvimento)
-* [Instalação](#instalacao)
+* [Sobre](#-sobre)
+* [Features](#-features)
+* [Ambiente de Desenvolvimento](#-ambiente-de-desenvolvimento)
+* [Instalação](#-instalacao)
 * [Como usar](#como-usar)
     * [Pre Requisitos](#pre-requisitos)
     * [Local files](#local-files)
