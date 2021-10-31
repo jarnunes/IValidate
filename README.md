@@ -5,7 +5,7 @@
 ## 👨‍💻 Programa para validar e gerar CPF/CNPJ
 
 <!--ts-->
-### 📖 Conteúdo
+###📖 Conteúdo
 * [Sobre](#-sobre)
 * [Features](#-features)
 * [Ambiente de Desenvolvimento](#-ambiente-de-desenvolvimento)
@@ -15,21 +15,21 @@
 <!--te-->
 
 --------------------------------------------------------------------------------
-### 💡 Features
+###💡 Features
 - [ ] Validar CPF
 - [ ] Gerar CPF
 - [ ] Validar CNPJ
 - [ ] Gerar CNPJ
 
 --------------------------------------------------------------------------------
-### ⚙️Ambiente de Desenvolvimento
+###⚙ Ambiente de Desenvolvimento
 1. [Instalar Java 8 +](https://www.oracle.com/br/java/technologies/javase/javase8-archive-downloads.html)
 2. [Instalar Maven](https://maven.apache.org/download.cgi)
 3. IDE para desenvolvimento Java
 4. Clonar o projeto em repositório local e importar para a IDE escolhida
 
 --------------------------------------------------------------------------------
-### 💻 ️Instalacao
+###💻 Instalacao
 
 1. [Necessário Java 8 +](https://www.oracle.com/br/java/technologies/javase/javase8-archive-downloads.html)
    1. Para checar se o java já se encontra instalado, execute na linha de comando: ``java -version``
@@ -40,12 +40,12 @@
 4. Acessar o endereço [http://localhost:8080](http://localhost:8080) em seu web browser
 --------------------------------------------------------------------------------
 
-### 🧪 Testes
+###🧪 Testes
 Descrição dos testes 
 
 --------------------------------------------------------------------------------
 
-### 🛠 Tecnologias
+###🛠 Tecnologias
 
 As seguintes ferramentas/tecnologias foram usadas no desenvolvimento do projeto:
 
