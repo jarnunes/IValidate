@@ -7,9 +7,11 @@ public class CPFValidate {
     private static int SEC_DIGIT_LENGTH = 11;
     private static int CAL_DIGIT_LIMIT = 2;
 
-    public static boolean isValid(String cpf) {
+    public static boolean validate(String cpf) {
+        if (cpf.length() < 11) return false;
+
         cpf = clear(cpf);
-        if (!isSequence(cpf)) {
+        if (!isSequence(cpf) ) {
             String tmp = removeLastDigits(cpf);
             tmp += String.valueOf(calcFirstDigit(Long.parseLong(tmp)));
             tmp += String.valueOf(calcSecDigit(Long.parseLong(tmp)));

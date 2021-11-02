@@ -49,22 +49,22 @@ public class CPFValidateTest {
 
     @Test
     public void testValidateSequence() {
-        Assert.assertFalse(CPFValidate.isValid(SEQUENCE_CPF));
+        Assert.assertFalse(CPFValidate.validate(SEQUENCE_CPF));
     }
 
     @Test
     public void testInvalidCPF() {
-        Assert.assertFalse(CPFValidate.isValid(INVALID_CPF));
+        Assert.assertFalse(CPFValidate.validate(INVALID_CPF));
     }
 
     @Test
     public void testValidCPF() {
-        Assert.assertTrue(CPFValidate.isValid(VALID_CPF));
+        Assert.assertTrue(CPFValidate.validate(VALID_CPF));
     }
 
     @Test
     public void testCleanValidCPF() {
-        Assert.assertTrue(CPFValidate.isValid(CLEAN_CPF));
+        Assert.assertTrue(CPFValidate.validate(CLEAN_CPF));
     }
 
 }
