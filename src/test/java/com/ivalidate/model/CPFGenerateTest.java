@@ -15,7 +15,7 @@ public class CPFGenerateTest {
 
     @Test
     public void testGenerateValidSequence(){
-        String cpf = CPFGenerate.generateValidSequence();
+        String cpf = CPFGenerate.generateCPF();
         Assert.assertTrue(CPFValidate.validate(cpf));
     }
 }
