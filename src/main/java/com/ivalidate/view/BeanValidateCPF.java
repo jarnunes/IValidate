@@ -50,7 +50,6 @@ public class BeanValidateCPF {
         this.started = started;
     }
 
-
     public String getIcon() {
         if (this.started) {
             if (this.valid) return "pi pi-check";
