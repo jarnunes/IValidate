@@ -17,7 +17,7 @@
 --------------------------------------------------------------------------------
 ### 💡 Features
 - [x] Validar CPF
-- [ ] Gerar CPF
+- [x] Gerar CPF
 - [ ] Validar CNPJ
 - [ ] Gerar CNPJ
 
