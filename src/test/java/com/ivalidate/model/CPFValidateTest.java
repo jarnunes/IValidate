@@ -4,12 +4,10 @@ import org.junit.Test;
 import org.junit.Assert;
 import com.ivalidate.model.cpf.CPFValidate;
 
-/*
- * TDD - Test Driven Development
- * 1 - Cria-se os testes da funcionalidade. Estes são chamados de testes falhos, pois a funcionalidade ainda não existe, desta forma, ao serem executados retornarão erro.
- * 2 - Desenvolve-se o código para fazer com que o teste seja executado, já que o desenvolvedor sabe quais funcionalidades deve implementar, fica mais prático o seu desenvolvimento.
- * 3 - Por fim refatorar, ou seja, melhorar a codificação.
- *  */
+/****
+ * @author Jardel Nunes
+ * Classe de testes unitários para a validação de CPF
+ */
 public class CPFValidateTest {
     private final String SEQUENCE_CPF = "11111111111";
     private final String INVALID_CPF = "111.111.111-11";
