@@ -1,4 +1,4 @@
 package com.ivalidate.model;
 
-public class CNPJValidate {
+public class CNPJValidateTest {
 }
