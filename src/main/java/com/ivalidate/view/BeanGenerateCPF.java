@@ -1,6 +1,7 @@
 package com.ivalidate.view;
 
 import com.ivalidate.model.cpf.CPFGenerate;
+
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.faces.bean.ManagedBean;
@@ -21,7 +22,7 @@ public class BeanGenerateCPF {
 
 
     public void generate() {
-        this.cpf  =CPFGenerate.generateCPF();
+        this.cpf = CPFGenerate.generateCPF();
         this.started = true;
     }
 
@@ -34,6 +35,7 @@ public class BeanGenerateCPF {
         this.started = started;
     }
 
+    /*
     public String getIcon() {
         if (this.started) {
             if (this.valid) return "pi pi-check";
@@ -50,5 +52,5 @@ public class BeanGenerateCPF {
             else return "ui-button-danger";
         }
         return "ui-button-secondary";
-    }
+    }*/
 }

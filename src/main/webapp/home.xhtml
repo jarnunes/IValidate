@@ -4,7 +4,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:pe="http://primefaces.org/ui/extensions"
+>
 <h:head>
     <title>IValidate</title>
     <link rel="stylesheet" href="resources/css/style.css"/>
@@ -45,6 +47,25 @@
 
                             </p:tab>
 
+                            <p:tab title="Gerar CPF" id="generatecpf">
+                                <div>
+                                    <h2>Gerar CPF</h2>
+
+                                    <div class="p-col-12 p-md-4">
+                                        <div class="ui-inputgroup">
+                                            <p:commandButton value="Gerar" update="@form"
+                                                             action="#{beanGenerateCPF.generate}"/>
+                                            <h:panelGroup rendered="#{beanGenerateCPF.started !=false}">
+                                                <p:inputText value="#{beanGenerateCPF.cpf}" id="newcpf"/>
+                                                <p:button icon="pi pi-copy"
+                                                          styleClass="ui-button-secondary"
+                                                          id="btnCopy"
+                                                />
+                                            </h:panelGroup>
+                                        </div>
+                                    </div>
+                                </div>
+                            </p:tab>
 
                             <p:tab title="Validar CNPJ" id="valcnpj">
                                 <div>
@@ -65,24 +86,7 @@
 
                             </p:tab>
 
-                            <p:tab title="Gerar CPF" id="generatecpj">
-                                <div>
-                                    <h2>Gerar CPF</h2>
-                                    <!--
-                                    <div class="p-col-12 p-md-4">
-                                        <div class="ui-inputgroup">
-                                            <p:commandButton value="Gerar" update="@form"
-                                                             action="#{generateCPF.generate}"/>
-                                            <h:panelGroup rendered="#{generateCPF.start !=false}">
-                                                <p:inputText value="#{generateCPF.cpf}" id="cp"/>
-                                                <p:commandButton icon="pi pi-copy"
-                                                                 styleClass="ui-button-secondary"/>
-                                            </h:panelGroup>
-                                        </div>
-                                    </div>
-                                    -->
-                                </div>
-                            </p:tab>
+
                         </p:tabView>
                     </div>
                 </h:form>
@@ -91,5 +95,6 @@
 
         </div>
     </div>
+
 </h:body>
 </html>
