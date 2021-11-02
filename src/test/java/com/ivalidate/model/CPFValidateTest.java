@@ -16,6 +16,8 @@ public class CPFValidateTest {
     private final String INVALID_FORMAT_CPF = "111.111.";
     private final String VALID_CPF = "524.237.730-56";
     private final String CLEAN_CPF = "52423773056";
+    private final long FIRST_VALID_SEQ = 111444777;
+    private final long SECOND_VALID_SEQ = 1114447773;
 
     @Test
     public void testClearCPF() {
@@ -36,12 +38,12 @@ public class CPFValidateTest {
 
     @Test
     public void testCalcFirstDigit() {
-        Assert.assertEquals(3, CPFValidate.calcFirstDigit(111444777));
+        Assert.assertEquals(3, CPFValidate.calcFirstDigit(FIRST_VALID_SEQ));
     }
 
     @Test
     public void testCalcSecDigit() {
-        Assert.assertEquals(5, CPFValidate.calcSecDigit(1114447773));
+        Assert.assertEquals(5, CPFValidate.calcSecDigit(SECOND_VALID_SEQ));
     }
 
 
