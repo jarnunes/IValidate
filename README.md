@@ -16,7 +16,7 @@
 
 --------------------------------------------------------------------------------
 ### 💡 Features
-- [ ] Validar CPF
+- [x] Validar CPF
 - [ ] Gerar CPF
 - [ ] Validar CNPJ
 - [ ] Gerar CNPJ
@@ -39,7 +39,8 @@
 ``` java -jar ivalidate.jar ```
 4. Acessar o endereço [http://localhost:8080](http://localhost:8080) em seu web browser
 <h1 align="center">
-  <img alt="Ivalidate" title="#Ivalidate" src="./assets/cpf.png" />
+  <img alt="Ivalidate" title="#Ivalidate" src="./assets/cpfvalido.png" />
+  <img alt="Ivalidate" title="#Ivalidate" src="./assets/cpfinvalido.png" />
 </h1>
 
 --------------------------------------------------------------------------------
