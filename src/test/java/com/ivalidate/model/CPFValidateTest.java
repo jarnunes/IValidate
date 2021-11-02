@@ -18,30 +18,52 @@ public class CPFValidateTest {
     private final String CLEAN_CPF = "52423773056";
 
     @Test
-    private void testValidateSequence() {
-        Assert.assertTrue(CPFValidate.validate(SEQUENCE_CPF));
-    }
-
-    @Test
-    private void testValidateInvalid() {
-        Assert.assertTrue(CPFValidate.validate(INVALID_CPF));
-    }
-
-    @Test
-    private void testValidCPF() {
-        Assert.assertTrue(CPFValidate.validate(VALID_CPF));
-    }
-
-    @Test
-    private void testCleanValidCPF() {
-        Assert.assertTrue(CPFValidate.validate(CLEAN_CPF));
-    }
-
-    @Test
-    private void testClearCPF() {
+    public void testClearCPF() {
         Assert.assertEquals(CLEAN_CPF, CPFValidate.clear(VALID_CPF));
     }
 
+    @Test
+    public void testIsSequenceMethod() {
+        // TODO verficar nos 10 mandamentos de testes se pode haver mais de um assert em um unico metodo
+        Assert.assertTrue(CPFValidate.isSequence(SEQUENCE_CPF));
+        Assert.assertTrue(CPFValidate.isSequence(INVALID_CPF));
+    }
+
+    @Test
+    public void testCalcModule() {
+        Assert.assertEquals(3, CPFValidate.calcModule(162));
+    }
+
+    @Test
+    public void testCalcFirstDigit() {
+        Assert.assertEquals(3, CPFValidate.calcFirstDigit(111444777));
+    }
+
+    @Test
+    public void testCalcSecDigit() {
+        Assert.assertEquals(5, CPFValidate.calcSecDigit(1114447773));
+    }
+
+
+    @Test
+    public void testValidateSequence() {
+        Assert.assertFalse(CPFValidate.isValid(SEQUENCE_CPF));
+    }
+
+    @Test
+    public void testInvalidCPF() {
+        Assert.assertFalse(CPFValidate.isValid(INVALID_CPF));
+    }
+
+    @Test
+    public void testValidCPF() {
+        Assert.assertTrue(CPFValidate.isValid(VALID_CPF));
+    }
+
+    @Test
+    public void testCleanValidCPF() {
+        Assert.assertTrue(CPFValidate.isValid(CLEAN_CPF));
+    }
 
 }
 
