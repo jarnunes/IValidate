@@ -1,7 +1,7 @@
 # IValidate
 ![Badge](https://img.shields.io/static/v1?label=java-language&message=1.8&color=blue&style=flat-square)
 ![Badge](https://img.shields.io/static/v1?label=junit&message=platform&color=color&style=flat-square)
-
+![Badge](https://img.shields.io/github/license/jarnunes/IValidate?style=flat-square)
 ## 👨‍💻 Programa para validar e gerar CPF/CNPJ
 
 <!--ts-->
