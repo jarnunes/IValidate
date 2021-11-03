@@ -1,0 +1,11 @@
+{
+  "name": "ivalidate",
+  "version": "1.0.0",
+  "description": "testes ivalidate",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Jardel Nunes",
+  "license": "ISC"
+}
