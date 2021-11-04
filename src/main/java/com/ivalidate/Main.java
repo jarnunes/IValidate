@@ -1,23 +1,28 @@
-/* Copyright � 2015 Oracle and/or its affiliates. All rights reserved. */
 package com.ivalidate;
+
+import java.io.File;
+
+import org.apache.catalina.LifecycleException;
+
+import javax.servlet.ServletException;
 
 import org.apache.catalina.startup.Tomcat;
 
-import java.util.Optional;
-
 public class Main {
 
-    public static final Optional<String> PORT = Optional.ofNullable(System.getenv("PORT"));
-    public static final Optional<String> HOSTNAME = Optional.ofNullable(System.getenv("HOSTNAME"));
+    public static void main(String[] args) throws LifecycleException, InterruptedException, ServletException {
 
-    public static void main(String[] args) throws Exception {
-        String contextPath = "/";
-        String appBase = ".";
+        String docBase = "src/main/webapp/";
         Tomcat tomcat = new Tomcat();
-        tomcat.setPort(Integer.valueOf(PORT.orElse("8081")));
-        tomcat.setHostname(HOSTNAME.orElse("localhost"));
-        tomcat.getHost().setAppBase(appBase);
-        tomcat.addWebapp(contextPath, appBase);
+        String webPort = System.getenv("PORT");
+        if (webPort == null || webPort.isEmpty()) {
+            webPort = "8080";
+        }
+        tomcat.setPort(Integer.valueOf(webPort));
+
+        tomcat.addWebapp("/", new File(docBase).getAbsolutePath());
+        System.out.println("configuring app with basedir: " + new File("./" + docBase).getAbsolutePath());
+
         tomcat.start();
         tomcat.getServer().await();
     }
