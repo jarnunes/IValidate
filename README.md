@@ -18,8 +18,8 @@
 ### 💡 Features
 - [x] Validar CPF
 - [x] Gerar CPF
-- [ ] Validar CNPJ
-- [ ] Gerar CNPJ
+- [x] Validar CNPJ
+- [x] Gerar CNPJ
 
 --------------------------------------------------------------------------------
 ### ⚙ Ambiente de Desenvolvimento
