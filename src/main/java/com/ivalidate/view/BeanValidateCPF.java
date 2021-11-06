@@ -1,16 +1,13 @@
 package com.ivalidate.view;
 
-import com.ivalidate.model.cpf.CPFValidate;
+import com.ivalidate.model.cpf.CpfValidate;
 
 import javax.faces.application.FacesMessage;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
 import javax.faces.context.FacesContext;
-import javax.inject.Named;
+import java.util.Objects;
+import javax.faces.bean.ManagedBean;
 
-@Named
 @ManagedBean
-@RequestScoped
 public class BeanValidateCPF {
     private boolean started = false;
     private String cpf;
@@ -25,7 +22,7 @@ public class BeanValidateCPF {
     }
 
     public void validate() {
-        this.valid = CPFValidate.validate(this.cpf);
+        this.valid = CpfValidate.validate(this.cpf);
         this.started = true;
         setMessages();
     }
@@ -33,7 +30,7 @@ public class BeanValidateCPF {
     private void setMessages() {
         if (this.valid) {
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "CPF " + this.cpf + " é válido.", null));
-        } else if (this.cpf == "") {
+        } else if (Objects.equals(this.cpf, "")) {
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "ERRO! Campo obrigatório", null));
 
         } else {
@@ -51,18 +48,18 @@ public class BeanValidateCPF {
     }
 
     public String getIcon() {
-        if (this.started) {
+        if (this.isStarted()) {
             if (this.valid) return "pi pi-check";
-            else if (this.cpf == "") return "pi pi-question";
+            else if (Objects.equals(this.cpf, "")) return "pi pi-question";
             else return "pi pi-times";
         }
         return "pi pi-question";
     }
 
     public String getStyle() {
-        if (this.started) {
+        if (this.isStarted()) {
             if (this.valid) return "ui-button-success";
-            else if (this.cpf == "") return "ui-button-secondary";
+            else if (Objects.equals(this.cpf, "")) return "ui-button-secondary";
             else return "ui-button-danger";
         }
         return "ui-button-secondary";

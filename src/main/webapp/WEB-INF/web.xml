@@ -43,6 +43,10 @@
         <servlet-name>Faces Servlet</servlet-name>
         <url-pattern>*.jsf</url-pattern>
     </servlet-mapping>
-    <!-- Configurações do FacesServlet-->
 
+    <!-- Configurações-->
+    <mime-mapping>
+        <extension>jsp</extension>
+        <mime-type>application/jsp</mime-type>
+    </mime-mapping>
 </web-app>

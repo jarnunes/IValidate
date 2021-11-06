@@ -68,34 +68,36 @@
                                 </div>
                             </p:tab>
 
-                            <p:tab title="Validar CNPJ" id="valcnpj">
+                            <p:tab title="Validar CNPJ" id="valcnpj" data-qa-selector="ptable-cpf">
+
                                 <div>
                                     <h2>Validar CNPJ</h2>
-                                    <!--
+
                                     <div class="p-col-12 p-md-4">
                                         <div class="ui-inputgroup">
-                                            <p:inputText placeholder="00.000.000/0001-00" value="" id="cnp"/>
-                                            <p:commandButton value="Validar" update="@form"
-                                                             action="#{generateCPF.validate}"
-                                                             icon="#{generateCPF.getIcon()}"
-                                                             styleClass="#{generateCPF.getStyle()}"
-                                            />
+                                            <h:panelGrid id="girdcnpj" cellpadding="7" columns="2" styleClass="p-mb-3">
+                                                <p:inputText value="#{beanValidateCPF.cpf}" id="cnpj"
+                                                />
+
+                                                <p:commandButton value="Validar" update="girdcnpj msgcnpj"
+                                                                 action="#{beanValidateCPF.validate}"
+                                                                 icon="#{beanValidateCPF.getIcon()}"
+                                                                 styleClass="#{beanValidateCPF.getStyle()}"
+                                                />
+
+                                            </h:panelGrid>
                                         </div>
                                     </div>
-                                    -->
+                                    <p:messages id="msgcnpj" infoStyle="color:#689f38"/>
+
                                 </div>
 
                             </p:tab>
-
-
                         </p:tabView>
                     </div>
                 </h:form>
             </div>
-
-
         </div>
     </div>
-
 </h:body>
 </html>
