@@ -11,7 +11,7 @@
     <title>IValidate</title>
     <link rel="shortcut icon" href="resources/images/favicon.ico"/>
     <link rel="stylesheet" href="resources/css/style.css"/>
-    <script type="text/javascript" src="resources/js/func.js"></script>
+
 </h:head>
 
 <h:body>
@@ -57,10 +57,10 @@
                                             <p:commandButton value="Gerar" update="@form"
                                                              action="#{beanGenerateCPF.generate}"/>
                                             <h:panelGroup rendered="#{beanGenerateCPF.started !=false}">
-                                                <p:inputText value="#{beanGenerateCPF.cpf}" id="newcpf"/>
-                                                <p:button icon="pi pi-copy"
-                                                          styleClass="ui-button-secondary"
-                                                          id="btnCopy"
+                                                <p:inputText value="#{beanGenerateCPF.cpf}" id="newcpf"
+                                                             class="js-copytextarea"/>
+                                                <p:commandButton icon="pi pi-copy"
+                                                                 styleClass="ui-button-secondary"
                                                 />
                                             </h:panelGroup>
                                         </div>
@@ -76,13 +76,13 @@
                                     <div class="p-col-12 p-md-4">
                                         <div class="ui-inputgroup">
                                             <h:panelGrid id="girdcnpj" cellpadding="7" columns="2" styleClass="p-mb-3">
-                                                <p:inputText value="#{beanValidateCPF.cpf}" id="cnpj"
+                                                <p:inputText value="#{beanValidateCnpj.cnpj}" id="cnpj"
                                                 />
 
                                                 <p:commandButton value="Validar" update="girdcnpj msgcnpj"
-                                                                 action="#{beanValidateCPF.validate}"
-                                                                 icon="#{beanValidateCPF.getIcon()}"
-                                                                 styleClass="#{beanValidateCPF.getStyle()}"
+                                                                 action="#{beanValidateCnpj.validate}"
+                                                                 icon="#{beanValidateCnpj.getIcon()}"
+                                                                 styleClass="#{beanValidateCnpj.getStyle()}"
                                                 />
 
                                             </h:panelGrid>
@@ -93,7 +93,26 @@
                                 </div>
 
                             </p:tab>
+                            <p:tab title="Gerar CNPJ" id="generateCnpj">
+                                <div>
+                                    <h2>Gerar CNPJ</h2>
+                                    <div class="p-col-12 p-md-4">
+                                        <div class="ui-inputgroup">
+                                            <p:commandButton value="Gerar" update="@form"
+                                                             action="#{beanGenerateCnpj.generate}"/>
+                                            <h:panelGroup rendered="#{beanGenerateCnpj.started !=false}">
+                                                <p:inputText value="#{beanGenerateCnpj.cpf}" id="newCnpj"/>
+                                                <p:commandButton icon="pi pi-copy"
+                                                                 styleClass="ui-button-secondary"
+                                                                 action="#{beanGenerateCnpj.copyClipboard}"
+                                                />
+                                            </h:panelGroup>
+                                        </div>
+                                    </div>
+                                </div>
+                            </p:tab>
                         </p:tabView>
+
                     </div>
                 </h:form>
             </div>

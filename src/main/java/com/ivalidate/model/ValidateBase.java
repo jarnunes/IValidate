@@ -7,16 +7,29 @@ public class ValidateBase {
     public static boolean isSequence(String identity) {
         identity = clear(identity);
         int counter = 0;
-        int aux = Integer.parseInt(String.valueOf(identity.charAt(0)));
-
-        for (int i = 0; i < identity.length(); i++) {
-            if (aux == Integer.parseInt(String.valueOf(identity.charAt(i)))) counter++;
+        try {
+            int aux = Integer.parseInt(String.valueOf(identity.charAt(0)));
+            for (int i = 0; i < identity.length(); i++) {
+                if (aux == Integer.parseInt(String.valueOf(identity.charAt(i)))) counter++;
+            }
+            return counter == identity.length();
+        } catch (Exception e) {
+            return false;
         }
-        return counter == identity.length();
+    }
+
+    public static boolean containsInvalidDigits(String identity) {
+        identity = clear(identity);
+        try {
+            long tmp = Long.parseLong(identity);
+            return false;
+        } catch (Exception erro) {
+            return true;
+        }
     }
 
     public static String clear(String identity) {
-        return identity.replaceAll("[^0-9]", "");
+        return identity.replaceAll("[./-]", "");
     }
 
     public static int calcModule(int calDigit) {

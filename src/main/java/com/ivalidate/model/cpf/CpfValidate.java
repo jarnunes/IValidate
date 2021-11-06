@@ -9,7 +9,7 @@ public class CpfValidate extends ValidateBase {
         if (cpf.length() < 11) return false;
 
         cpf = clear(cpf);
-        if (!isSequence(cpf)) {
+        if (!isSequence(cpf) && !containsInvalidDigits(cpf)) {
             String tmp = removeLastDigits(cpf);
             tmp += String.valueOf(calcFirstSecDigit(Long.parseLong(tmp), 1));
             tmp += String.valueOf(calcFirstSecDigit(Long.parseLong(tmp), 2));

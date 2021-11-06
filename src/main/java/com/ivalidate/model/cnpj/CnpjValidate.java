@@ -25,7 +25,7 @@ public class CnpjValidate extends ValidateBase {
         if (cnpj.length() < 11) return false;
 
         cnpj = clear(cnpj);
-        if (!isSequence(cnpj)) {
+        if (!isSequence(cnpj) && !containsInvalidDigits(cnpj)) {
             String tmp = removeLastDigits(cnpj);
             tmp += String.valueOf(calcDigit(Long.parseLong(tmp), 1));
             tmp += String.valueOf(calcDigit(Long.parseLong(tmp), 2));

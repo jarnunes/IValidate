@@ -43,9 +43,6 @@ public class BeanValidateCPF {
         return started;
     }
 
-    public void setStarted(boolean started) {
-        this.started = started;
-    }
 
     public String getIcon() {
         if (this.isStarted()) {

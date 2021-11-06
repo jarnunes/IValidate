@@ -25,4 +25,5 @@ public class GenerateBase {
         return 0;
     }
 
+
 }

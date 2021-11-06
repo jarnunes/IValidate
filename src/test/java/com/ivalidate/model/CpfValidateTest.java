@@ -13,6 +13,7 @@ public class CpfValidateTest {
     private final String INVALID_CPF = "111.111.111-11";
     private final String VALID_CPF = "524.237.730-56";
     private final String CLEAN_CPF = "52423773056";
+    private final String INVALID_DIGIT = "524.237.730-56a";
 
     @Test
     public void testClearCPF() {
@@ -64,5 +65,8 @@ public class CpfValidateTest {
         Assert.assertTrue(CpfValidate.validate(CLEAN_CPF));
     }
 
+    @Test
+    public void testInvalidCharacter() {
+        Assert.assertTrue(CpfValidate.containsInvalidDigits(INVALID_DIGIT));
+    }
 }
-
