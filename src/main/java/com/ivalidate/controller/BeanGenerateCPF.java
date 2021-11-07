@@ -1,37 +1,24 @@
 package com.ivalidate.controller;
 
 import com.ivalidate.model.cpf.CpfGenerate;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 
-
+@Getter
+@Setter
 @ManagedBean
 @RequestScoped
 public class BeanGenerateCPF extends BeanBase {
-    private boolean started = false;
-    private String cpf;
-
-    public String getCpf() {
-        return cpf;
-    }
-
 
     public void generate() {
-        this.cpf = CpfGenerate.generateCPF();
-        this.started = true;
-    }
-
-
-    public boolean isStarted() {
-        return started;
-    }
-
-    public void setStarted(boolean started) {
-        this.started = started;
+        this.setIdentity(CpfGenerate.generateCPF());
+        this.setStarted(true);
     }
 
     public void copyClipBoard() {
-        super.copy(this.cpf);
+        super.copy(this.getIdentity());
     }
 }

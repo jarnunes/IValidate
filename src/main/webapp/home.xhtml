@@ -57,7 +57,7 @@
                                             <p:commandButton value="Gerar" update="@form"
                                                              action="#{beanGenerateCPF.generate}"/>
                                             <h:panelGroup rendered="#{beanGenerateCPF.started !=false}">
-                                                <p:inputText value="#{beanGenerateCPF.cpf}" id="newcpf"
+                                                <p:inputText value="#{beanGenerateCPF.identity}" id="newcpf"
                                                              class="js-copytextarea"/>
                                                 <p:commandButton icon="pi pi-copy"
                                                                  styleClass="ui-button-secondary"
@@ -101,7 +101,7 @@
                                             <p:commandButton value="Gerar" update="@form"
                                                              action="#{beanGenerateCnpj.generate}"/>
                                             <h:panelGroup rendered="#{beanGenerateCnpj.started !=false}">
-                                                <p:inputText value="#{beanGenerateCnpj.cpf}" id="newCnpj"/>
+                                                <p:inputText value="#{beanGenerateCnpj.identity}" id="newCnpj"/>
                                                 <p:commandButton icon="pi pi-copy"
                                                                  styleClass="ui-button-secondary"
                                                                  action="#{beanGenerateCnpj.copyClipboard}"

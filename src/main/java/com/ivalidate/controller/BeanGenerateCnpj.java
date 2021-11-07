@@ -1,37 +1,27 @@
 package com.ivalidate.controller;
 
 import com.ivalidate.model.cnpj.CnpjGenerate;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 
-
+@Getter
+@Setter
 @ManagedBean
 @RequestScoped
 public class BeanGenerateCnpj extends BeanBase {
-    private boolean started = false;
-    private String cnpj;
-
-    public String getCpf() {
-        return cnpj;
-    }
 
 
     public void generate() {
-        this.cnpj = CnpjGenerate.generate();
-        this.started = true;
+        this.setIdentity(CnpjGenerate.generate());
+        this.setStarted(true);
     }
 
     public void copyClipboard() {
-        super.copy(this.cnpj);
+        super.copy(this.getIdentity());
     }
 
-    public boolean isStarted() {
-        return started;
-    }
-
-    public void setStarted(boolean started) {
-        this.started = started;
-    }
 
 }
