@@ -1,7 +1,6 @@
 package com.ivalidate.model.cnpj;
 
-import com.ivalidate.model.GenerateBase;
-import com.ivalidate.model.cpf.CpfValidate;
+import com.ivalidate.model.base.GenerateBase;
 
 public class CnpjGenerate extends GenerateBase {
     private static final int NUM_DIGITS = 14;

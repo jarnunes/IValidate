@@ -1,6 +1,8 @@
 package com.ivalidate.model.cnpj;
 
-import com.ivalidate.model.ValidateBase;
+import com.ivalidate.model.base.CalcBaseDigits;
+import com.ivalidate.model.base.ValidateBase;
+import com.ivalidate.model.utils.ClearIdentity;
 
 public class CnpjValidate extends ValidateBase {
     private static final int CAL_DIGIT_LIMIT = 2;
@@ -14,8 +16,7 @@ public class CnpjValidate extends ValidateBase {
                 calc += (preCnpj % 10) * sequence[j];
                 preCnpj = preCnpj / 10;
             }
-            return calcModule(calc);
-
+            return CalcBaseDigits.calcModule(calc);
         } catch (Exception e) {
             return -1;
         }
@@ -24,9 +25,10 @@ public class CnpjValidate extends ValidateBase {
     public static boolean validate(String cnpj) {
         if (cnpj.length() < 11) return false;
 
-        cnpj = clear(cnpj);
-        if (!isSequence(cnpj) && !containsInvalidDigits(cnpj)) {
-            String tmp = removeLastDigits(cnpj);
+        cnpj = ClearIdentity.clear(cnpj);
+
+        if (isValidBase(cnpj)) {
+            String tmp = ClearIdentity.removeLastDigits(cnpj);
             tmp += String.valueOf(calcDigit(Long.parseLong(tmp), 1));
             tmp += String.valueOf(calcDigit(Long.parseLong(tmp), 2));
             return cnpj.equals(tmp);

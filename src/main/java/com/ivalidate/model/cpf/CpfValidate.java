@@ -1,16 +1,17 @@
 package com.ivalidate.model.cpf;
 
-import com.ivalidate.model.ValidateBase;
+import com.ivalidate.model.base.CalcBaseDigits;
+import com.ivalidate.model.base.ValidateBase;
+import com.ivalidate.model.utils.ClearIdentity;
 
 public class CpfValidate extends ValidateBase {
     private static final int CAL_DIGIT_LIMIT = 2;
 
     public static boolean validate(String cpf) {
         if (cpf.length() < 11) return false;
-
-        cpf = clear(cpf);
-        if (!isSequence(cpf) && !containsInvalidDigits(cpf)) {
-            String tmp = removeLastDigits(cpf);
+        cpf = ClearIdentity.clear(cpf);
+        if (isValidBase(cpf)) {
+            String tmp = ClearIdentity.removeLastDigits(cpf);
             tmp += String.valueOf(calcFirstSecDigit(Long.parseLong(tmp), 1));
             tmp += String.valueOf(calcFirstSecDigit(Long.parseLong(tmp), 2));
             return cpf.equals(tmp);
@@ -27,10 +28,9 @@ public class CpfValidate extends ValidateBase {
                 calc += (preCPF % 10) * i;
                 preCPF = preCPF / 10;
             }
-            return calcModule(calc);
+            return CalcBaseDigits.calcModule(calc);
         } catch (Exception e) {
             return -1;
         }
     }
-
 }

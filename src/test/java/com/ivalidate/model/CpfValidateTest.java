@@ -3,6 +3,8 @@ package com.ivalidate.model;
 import org.junit.Test;
 import org.junit.Assert;
 import com.ivalidate.model.cpf.CpfValidate;
+import com.ivalidate.model.utils.ClearIdentity;
+import com.ivalidate.model.base.CalcBaseDigits;
 
 /****
  * @author Jardel Nunes
@@ -17,19 +19,12 @@ public class CpfValidateTest {
 
     @Test
     public void testClearCPF() {
-        Assert.assertEquals(CLEAN_CPF, CpfValidate.clear(VALID_CPF));
-    }
-
-    @Test
-    public void testIsSequenceMethod() {
-        // TODO verficar nos 10 mandamentos de testes se pode haver mais de um assert em um unico metodo
-        Assert.assertTrue(CpfValidate.isSequence(SEQUENCE_CPF));
-        Assert.assertTrue(CpfValidate.isSequence(INVALID_CPF));
+        Assert.assertEquals(CLEAN_CPF, ClearIdentity.clear(VALID_CPF));
     }
 
     @Test
     public void testCalcModule() {
-        Assert.assertEquals(3, CpfValidate.calcModule(162));
+        Assert.assertEquals(3, CalcBaseDigits.calcModule(162));
     }
 
     @Test
@@ -65,8 +60,4 @@ public class CpfValidateTest {
         Assert.assertTrue(CpfValidate.validate(CLEAN_CPF));
     }
 
-    @Test
-    public void testInvalidCharacter() {
-        Assert.assertTrue(CpfValidate.containsInvalidDigits(INVALID_DIGIT));
-    }
 }

@@ -1,6 +1,6 @@
-package com.ivalidate.view;
+package com.ivalidate.controller;
 
-import com.ivalidate.model.cpf.CpfGenerate;
+import com.ivalidate.model.cnpj.CnpjGenerate;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
@@ -8,20 +8,23 @@ import javax.faces.bean.RequestScoped;
 
 @ManagedBean
 @RequestScoped
-public class BeanGenerateCPF extends BeanBase {
+public class BeanGenerateCnpj extends BeanBase {
     private boolean started = false;
-    private String cpf;
+    private String cnpj;
 
     public String getCpf() {
-        return cpf;
+        return cnpj;
     }
 
 
     public void generate() {
-        this.cpf = CpfGenerate.generateCPF();
+        this.cnpj = CnpjGenerate.generate();
         this.started = true;
     }
 
+    public void copyClipboard() {
+        super.copy(this.cnpj);
+    }
 
     public boolean isStarted() {
         return started;
@@ -31,7 +34,4 @@ public class BeanGenerateCPF extends BeanBase {
         this.started = started;
     }
 
-    public void copyClipBoard() {
-        super.copy(this.cpf);
-    }
 }

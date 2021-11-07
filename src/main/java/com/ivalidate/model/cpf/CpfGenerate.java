@@ -1,6 +1,6 @@
 package com.ivalidate.model.cpf;
 
-import com.ivalidate.model.GenerateBase;
+import com.ivalidate.model.base.GenerateBase;
 
 public class CpfGenerate extends GenerateBase {
     private static final int NUM_DIGITS = 11;

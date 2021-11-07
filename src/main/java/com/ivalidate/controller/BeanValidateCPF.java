@@ -1,4 +1,4 @@
-package com.ivalidate.view;
+package com.ivalidate.controller;
 
 import com.ivalidate.model.cpf.CpfValidate;
 
@@ -10,8 +10,8 @@ import javax.faces.bean.ManagedBean;
 @ManagedBean
 public class BeanValidateCPF {
     private boolean started = false;
-    private String cpf;
     private boolean valid = false;
+    private String cpf;
 
     public String getCpf() {
         return cpf;

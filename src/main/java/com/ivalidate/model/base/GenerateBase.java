@@ -1,4 +1,4 @@
-package com.ivalidate.model;
+package com.ivalidate.model.base;
 
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.Locale;
@@ -17,6 +17,12 @@ public class GenerateBase {
                 .nextLong(calcMinMaxValue(numDigits - 2, "min"), calcMinMaxValue(numDigits - 2, "max")));
     }
 
+    /***
+     *
+     * @param numDigits
+     * @param op
+     * @return
+     */
     private static long calcMinMaxValue(int numDigits, String op) {
         if (Objects.equals(op.toLowerCase(Locale.ROOT), "min"))
             return (long) Math.pow(10, numDigits - 1);
@@ -24,6 +30,4 @@ public class GenerateBase {
             return (long) Math.pow(10, numDigits) - 1;
         return 0;
     }
-
-
 }

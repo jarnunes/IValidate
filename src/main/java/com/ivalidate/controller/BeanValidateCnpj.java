@@ -1,4 +1,4 @@
-package com.ivalidate.view;
+package com.ivalidate.controller;
 
 import com.ivalidate.model.cnpj.CnpjValidate;
 
