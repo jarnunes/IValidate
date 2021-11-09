@@ -34,7 +34,6 @@ public class CpfValidateTest {
     }
 
 
-
     @Test
     public void testCalcSecDigit() {
         long SECOND_VALID_SEQ = 1114447773;
